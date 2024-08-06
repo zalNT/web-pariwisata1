@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesian Tourism</title>
+    <link rel="website icon" type="png" href="foto/logo-pesona-indonesia-hd-16.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.iconify.design/2/2.0.3/iconify.min.css">
+
+<style>
+  /* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a3a3a3;
+}       
+        /* Section Styling */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+/* Home Section Styling */
+.home {
+    background-image: url('foto/Picsart_24-07-30_07-31-14-513.jpg');
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.navbar {
+      background-color: black;
+      transition: background-color 0.5s ease;
+    }
+.navbar .nav-link {
+     color: black;
+    }
+.navbar .navbar-brand {
+      color: #000000 !important;
+    }
+.home img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: white;
+            text-align: center;
+        }
+
+/* Cards Container Styling */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+/* Card Styling */
+.card {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px); /* 3 cards per row with gap */
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+/* Card Image Styling */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card Content Styling */
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.card p {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 0;
+}
+
+.footer-logo {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social-icons a {
+    color: #ffffff;
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.footer-social-icons a:hover {
+    color: #adb5bd;
+}
+
+.footer-bottom {
+    background-color: #23272b;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #575757;
+}
+
+/* Animation Styling */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.delay-1s {
+    animation-delay: 1s;
+}
+
+.delay-2s {
+    animation-delay: 2s;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* 1 card per row on small screens */
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+}
+
+.grid-item {
+    margin-right: 20px; /* Adjust margin as needed */
+    margin-bottom: 20px;
+}
+
+.grid-item:first-of-type {
+    width: 700px; /* Adjust size as needed */
+}
+/* General form styling */
+#contact-form {
+    max-width: 600px; /* Adjust the max width as needed */
+    margin: 0 auto;
+    background-color: #222; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(94, 84, 84, 0.1), 0 6px 20px rgba(32, 28, 28, 0.1); /* Add multiple shadows for depth */
+    padding: 30px;
+    margin-top: -19px; /* Move the form 50px up */
+    margin-bottom: 83px;
+}
+
+/* Form element styling */
+#contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none;
+}
+
+#contact-form button {
+    padding: 12px 20px;
+    background-color: #e74c3c; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #e74c3c; /* Darker shade on hover */
+}
+
+
+ul{
+            margin: 0;
+            padding: 9px;
+            display: flex;
+            list-style-type:none;
+        }
+
+        ul li a{
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            margin: 0px 10px;
+            position: relative;
+            transition: all .5s;
+        }
+
+        a:hover{
+            background-color: rgba(87, 87, 87, 0.164);
+            color:white;
+            border-radius: 6px;
+        }
+
+
+        a::before{
+            content: "";
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            height: 12px;
+            width: 12px;
+            border: 3px solid rgb(0, 0, 0);
+            border-width: 0 0 3px 3px;
+            opacity: 0;
+            transition: all 0.3s;
+            color: white;
+        }
+        .about_us {
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            overflow: hidden;
+            width: 97%;
+            max-width: 2500px;
+        }
+
+        .about_us img {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .about-us-content {
+            padding: 20px;
+        }
+
+        .additional-image {
+            width: 80%;
+            max-width: 700px;
+            margin: 20px 0;
+        }
+        .ticket-purchase {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+  }
+
+  .ticket-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .ticket-option {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+
+  .ticket-option:hover {
+    transform: translateY(-10px);
+  }
+
+  .btn-buy {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-buy:hover {
+    background-color: #c0392b;
+  }
+
+  .ticket-price {
+    font-weight: bold;
+  }
+  .reviews-section {
+    background-color: #222;
+    color: white;
+    padding: 30px 0;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    color: #ccc;
+}
+
+.reviewer-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.review-date {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.review-content {
+    max-width: 700px;
+    color: #ccc;
+}
+
+.review-content p {
+    margin: 0 0 10px;
+}
+
+.rating {
+    font-size: 1.5em;
+    color: #f1c40f;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav class=
+    "navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="foto/1200px-Logo_Pesona_Indonesia_(Kementerian_Pariwisata).png" alt="" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 10px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ticket">ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#review">review</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section id="home" class="section home">
+            <div class="home-content">
+              <h1 class="fadeInUp delay-1s">Welcome to Indonesia's Beautiful Destinations</h1>
+              <p class="fadeInUp delay-2s">Discover the hidden gems of Indonesia</p>
+            </div>
+        </section>
+        
+        <section id="destinations" class="section">
+          <h2 style="margin-bottom:30px ;padding-top: 38px; color: #222;"><b>Popular Destinations</b></h2>
+          <div class="cards-container">
+<!--Bali-->
+              <div class="card fadeInUp">
+                  <a href="bali.html" style="text-decoration: none; color: black;">
+                      <img src="foto/bali.jpg" alt="Bali">
+                      <h3 style="margin: 0;">Bali</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Island of the Gods, known for its forested volcanic mountains, iconic rice paddies, beaches, and coral reefs.</p>
+                  </div>
+              </div>
+<!--komodo-->
+              <div class="card fadeInUp delay-1s">
+                  <a href="komodo.html" style="text-decoration: none; color: black;">
+                      <img src="foto/komodo.jpeg" alt="Bali">
+                      <h3 style="margin: 0;">Pulau Komodo</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Land of Dragons, renowned for its ancient Komodo dragons, stunning pink sand beaches, and crystal-clear waters.</p>
+                  </div>
+              </div>
+<!--bromo-->
+              <div class="card fadeInUp delay-2s">
+                  <a href="bromo.html" style="text-decoration: none; color: black;">
+                      <img src="foto/bromobagianhome.jpg" alt="Bali">
+                      <h3 style="margin: 0;">Gunung Bromo</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Majestic Volcano, famous for its dramatic caldera, stunning sunrise views, and surreal landscapes.</p>
+                  </div>
+              </div>
+<!--danau toba-->
+              <div class="card fadeInUp delay-2s">
+                  <a href="danau_toba.html" style="text-decoration: none; color: black;">
+                      <img src="foto/danautoba.jpeg" alt="">
+                      <h3 style="margin: 0;">Danau Toba</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>Lake Toba, renowned for its vast volcanic caldera, stunning island views, and breathtaking natural beauty.</p>
+                  </div>
+              </div>
+<!--raja ampat-->
+              <div class="card fadeInUp delay-1s">
+                  <a href="raja_ampat.html" style="text-decoration: none; color: black;">
+                      <img src="foto/rajaampat home.webp" alt="Bali">
+                      <h3 style="margin: 0;">Raja Ampat</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Archipelago of Wonders, renowned for its vibrant coral reefs, diverse marine life, and pristine beaches.</p>
+                  </div>
+              </div>
+<!--patung wisnu kencana-->
+              <div class="card fadeInUp">
+                  <a href="wisnu_kencana.html" style="text-decoration: none; color: black;">
+                      <img src="foto/the-garuda-wisnu-kencana.jpg" alt="Bali">
+                      <h3 style="margin: 0;">Patung Wisnu Kencana</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Garuda Wisnu Kencana statue, renowned for its depiction of the god Vishnu riding the Garuda. Located in a cultural park, it offers breathtaking views and cultural events. This iconic statue is one of the tallest in the world.</p>
+                  </div>
+              </div>
+<!--gunung rinjani-->
+              <div class="card fadeInUp">
+                  <a href="gunung_rinjani.html" style="text-decoration: none; color: black;">
+                      <img src="foto/gunung-rinjanihome.jpg" alt="Bali">
+                      <h3 style="margin: 0;">Gunung Rinjani</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Mountain of Rinjani, known for its stunning crater lake, challenging trekking paths, and breathtaking sunrise views.</p>
+                  </div>
+              </div>
+<!--candi borobudur-->
+              <div class="card fadeInUp delay-2s">
+                  <a href="borobudur.html" style="text-decoration: none; color: black;">
+                      <img src="foto/headerborobudurhome.avif" alt="Bali">
+                      <h3 style="margin: 0;">Candi Borobudur</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Great Stupa, renowned for its magnificent architecture, ancient stone carvings, and breathtaking sunrise views over the lush surroundings.</p>
+                  </div>
+              </div>
+<!--candi prambanan-->
+              <div class="card fadeInUp delay-2s">
+                  <a href="prambanan.html" style="text-decoration: none; color: black;">
+                      <img src="foto/prambananhome2.jpg" alt="Bali">
+                      <h3 style="margin: 0;">Candi Prambanan</h3>
+                  </a>
+                  <div class="card-content">
+                      <p>The Temple of Prambanan, renowned for its stunning Hindu architecture, majestic spires, and intricate reliefs. This ancient temple complex is celebrated for its rich history and cultural significance. Set against the backdrop of lush landscapes, it offers a glimpse into Indonesia's vibrant past.</p>
+                  </div>
+              </div>
+
+          </div>
+      </section>
+        <!--bagian paragraf-->
+      <section id="about" class="section">
+        <h2 style="margin-bottom: 20px;padding-top: 50px; color:#222;"><b>About Us</b></h2>
+        <div class="grid-container">
+            <div class="about_us">
+            <img src="foto/wisata-super-prioritas-labuan-bajo_169.jpeg" alt="Wisata Labuan Bajo" class="grid-item">
+            <p style="color: white;">Indonesia, dengan lebih dari 17.000 pulau, merupakan surga wisata yang menawarkan berbagai destinasi yang memukau dan beragam. Setiap pulau memiliki keunikannya sendiri, mulai dari hutan tropis yang rimbun dan pantai yang bersih, hingga gunung yang megah dan situs warisan budaya. Baik Anda seorang pecinta alam, penggemar sejarah, atau sekadar mencari tempat bersantai, Indonesia memiliki sesuatu untuk semua orang.Pulau Bali, yang terkenal di seluruh dunia, menawarkan pantai yang indah, tradisi budaya yang kaya, dan keramahan yang hangat. Lanskap vulkaniknya yang dramatis, sawah bertingkat, dan arsitektur candi yang rumit menjadikannya pilihan utama bagi wisatawan yang mencari petualangan sekaligus ketenangan. Skena seni Bali yang dinamis, ditambah dengan resor mewah dan kehidupan malam yang semarak, memastikan pengunjung merasakan yang terbaik dari relaksasi dan kesenangan.</p><br>
+            <img src="foto/danautoba.webp" alt="danautoba" class="additional-image">
+            <p style="color: white;">Sebaliknya, Pulau Jawa adalah rumah bagi ibu kota Indonesia, Jakarta, serta candi-candi kuno Borobudur dan Prambanan. Situs Warisan Dunia UNESCO ini menawarkan jendela ke masa lalu Indonesia, dengan Borobudur menampilkan ukiran Buddha yang menakjubkan dan Prambanan mencerminkan kemegahan arsitektur Hindu. Lanskap Jawa yang beragam, dari puncak gunung berapi hingga perkebunan teh yang luas, menjadikannya destinasi menarik bagi penjelajah dan penggemar sejarah.</p>
+            </div>
+        </div>
+    </section>
+    
+  <section id="contact" class="section">
+    <h2 style="padding-top: 60px; margin-bottom: 70px; color: #222;"><b>Contact Us</b></h2>
+    <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  <section id="ticket" class="section">
+    <div class="ticket-purchase">
+      <h2 style="padding-top: 35px; margin-bottom: 16px; color: white;">Buy Tickets</h2>
+      <p style="color: #f1c40f; font-size: 1.2em; margin-bottom: 20px;">Don't miss out on your dream destinations!</p>
+      <div class="ticket-options">
+        <div class="ticket-option">
+          <h3 style="color: #2ecc71;">Basic Package</h3>
+          <p style="color: white;">Sangat cocok untuk liburan singkat</p>
+          <ul style="color: white; list-style-type: none; padding: 0;">
+            <li>Tiket masuk 3 hari</li>
+            <li>Akses ke atraksi utama</li>
+            <li>Gratis buku panduan</li>
+          </ul>
+          <p class="ticket-price" style="color: #e74c3c; font-size: 1.5em;">$50</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+
+        <div class="ticket-option">
+          <h3 style="color: #3498db;">Standard Package</h3>
+          <p style="color: white;">Untuk pengalaman yang menyenangkan.</p>
+          <ul style="color: white; list-style-type: none; padding: 0;">
+            <li>Tiket masuk 7 hari</li>
+            <li>Akses ke semua atraksi</li>
+            <li>Gratis buku panduan dan peta</li>
+            <li>Gratis satu makanan per hari</li>
+          </ul>
+          <p class="ticket-price" style="color: #e74c3c; font-size: 1.5em;">$120</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+        
+        <div class="ticket-option">
+          <h3 style="color: #e67e22;">Premium Package</h3>
+          <p style="color: white;">Untuk pengalaman berharga</p>
+          <ul style="color: white; list-style-type: none; padding: 2;">
+            <li>Tiket masuk 14 hari</li>
+            <li>Akses VIP ke semua atraksi</li>
+            <li>Tur berpemandu eksklusif</li>
+            <li>Lengkap dengan hidangan yang mewah</li>
+            <li>Gratis suvenir</li>
+          </ul>
+          <p class="ticket-price" style="color: #e74c3c; font-size: 1.5em;">$250</p>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="review" class="section">
+<!-- Reviews Section -->
+<div class="reviews-section">
+    <h2 style="padding-top: 35px; margin-bottom: 16px; color: white;">Customer Reviews</h2>
+    <div class="review">
+        <div class="reviewer-info">
+            <img src="foto/foto bapk1.jpeg" alt="User 1" class="reviewer-photo">
+            <h4 class="reviewer-name">Usep Setiyadi</h4>
+            <p class="review-date">Reviewed on July 20, 2024</p>
+        </div>
+        <div class="review-content">
+            <p>"Paket Premium? Wah, ini sih kaya dapet tiket masuk ke dunia ajaib! 🎩✨ Tur panduannya bikin kita merasa kayak detektif ulung, dan akses VIP-nya bikin segala urusan jadi gampang. Bener-bener paket yang bikin senyum lebar, rekomendasi dari hati nih! 😆👑"</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> <!-- 5 stars -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="review">
+        <div class="reviewer-info">
+            <img src="foto/foto bapk2.jpeg" alt="User 2" class="reviewer-photo">
+            <h4 class="reviewer-name">Herman Saepuloh</h4>
+            <p class="review-date">Reviewed on August 1, 2024</p>
+        </div>
+        <div class="review-content">
+            <p>"Wah, Paket Standar ini bener-bener bikin dompet bahagia! Akses ke semua tempat keren, udah gitu dapet makan gratis lagi tiap hari. Pokoknya, dijamin balik lagi! 😆"</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> <!-- 4 stars -->
+            </div>
+        </div>
+    </div>
+
+    <div class="review">
+        <div class="reviewer-info">
+            <img src="foto/foto bapk3.jpg" alt="User 3" class="reviewer-photo">
+            <h4 class="reviewer-name">Joko Guntur</h4>
+            <p class="review-date">Reviewed on August 2, 2024</p>
+        </div>
+        <div class="review-content">
+            <p>"Paket Dasar ini cocok banget buat perjalanan singkat. Semua tempat wisata utama udah tercakup, plus dapet buku panduan yang oke banget. Buat yang pengen liburan hemat, ini pilihan yang pas!"</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9734;&#9734;</span> <!-- 3 stars -->
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+  </section>
+</section>
+</main>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+              <p>Address: 123456, Bandung, Indonesia</p>
+              <p>Email: laronterbang425@gmail.com</p>
+              <p>Phone: 082312601075</p>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <h5 class="text-center text-md-start">Quick Links</h5>
+              <div class="footer-links text-center text-md-start">
+                <a href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+              <h5>Follow Us</h5>
+              <div class="footer-social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61561126714242&mibextid=ZbWKwL" class="bi bi-facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="bi bi-twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/zal.fzi?igsh=ZGhnbmo5aHA5dnc1&utm_source=qr" class="bi bi-instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="bi bi-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></script>
+</body>
+</html>
